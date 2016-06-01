@@ -51,7 +51,7 @@ function tasksFirebase(getState) {
 
 }
 
-function* watchFirebase([getState]) {
+function* watchFirebase(getState) {
 
 	const channel = yield call(tasksFirebase, getState);
 
@@ -68,10 +68,10 @@ function* watchFirebase([getState]) {
 
 }
 
-function* watcherInitAuth(args) {
-	yield takeLatest(INIT_AUTH, watchFirebase, args);
+function* watcherInitAuth(getState) {
+	yield takeLatest(INIT_AUTH, watchFirebase, getState);
 }
 
-export default function* mySaga(args) {
-	yield fork(watcherInitAuth, args);
+export default function* mySaga(getState) {
+	yield fork(watcherInitAuth, getState);
 }

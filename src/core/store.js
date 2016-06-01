@@ -20,7 +20,7 @@ export default (initialState = {}) => {
 
   const store = createStore(reducers, initialState, middleware);
 
-  sagaMiddleware.run(mySaga, [store.getState]);
+  sagaMiddleware.run(mySaga, store.getState);
 
   if (module.hot) {
     module.hot.accept('./reducers', () => {
