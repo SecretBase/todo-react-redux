@@ -79,25 +79,25 @@ export function updateTask(task, changes) {
 
 
 export function registerListeners() {
-  return (dispatch, getState) => {
-    const { auth } = getState();
-    const ref = firebaseDb.ref(`tasks/${auth.id}`);
-
-    ref.on('child_added', snapshot => dispatch({
-      type: CREATE_TASK_SUCCESS,
-      payload: recordFromSnapshot(snapshot)
-    }));
-
-    ref.on('child_changed', snapshot => dispatch({
-      type: UPDATE_TASK_SUCCESS,
-      payload: recordFromSnapshot(snapshot)
-    }));
-
-    ref.on('child_removed', snapshot => dispatch({
-      type: DELETE_TASK_SUCCESS,
-      payload: recordFromSnapshot(snapshot)
-    }));
-  };
+  // return (dispatch, getState) => {
+  //   const { auth } = getState();
+  //   const ref = firebaseDb.ref(`tasks/${auth.id}`);
+  //
+  //   ref.on('child_added', snapshot => dispatch({
+  //     type: CREATE_TASK_SUCCESS,
+  //     payload: recordFromSnapshot(snapshot)
+  //   }));
+  //
+  //   ref.on('child_changed', snapshot => dispatch({
+  //     type: UPDATE_TASK_SUCCESS,
+  //     payload: recordFromSnapshot(snapshot)
+  //   }));
+  //
+  //   ref.on('child_removed', snapshot => dispatch({
+  //     type: DELETE_TASK_SUCCESS,
+  //     payload: recordFromSnapshot(snapshot)
+  //   }));
+  // };
 }
 
 

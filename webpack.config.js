@@ -78,7 +78,8 @@ if (ENV_DEVELOPMENT || ENV_PRODUCTION) {
       'react-router',
       'react-router-redux',
       'redux',
-      'redux-thunk'
+      'redux-thunk',
+		'redux-saga'
     ]
   };
 

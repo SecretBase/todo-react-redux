@@ -16,14 +16,14 @@ export class Tasks extends Component {
     dismissNotification: PropTypes.func.isRequired,
     location: PropTypes.object.isRequired,
     notification: PropTypes.object.isRequired,
-    registerListeners: PropTypes.func.isRequired,
+   //  registerListeners: PropTypes.func.isRequired,
     tasks: PropTypes.array.isRequired,
     undeleteTask: PropTypes.func.isRequired,
     updateTask: PropTypes.func.isRequired
   };
 
   componentWillMount() {
-    this.props.registerListeners();
+   //  this.props.registerListeners();
   }
 
   renderNotification() {
